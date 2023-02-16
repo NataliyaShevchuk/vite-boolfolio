@@ -36,14 +36,19 @@ export default {
                             alt="...">
                         </div>
                         <div class="card-body">
-                            <router-link :to="{ name: 'show', params: {id: project.id} }">{{ project.title }}</router-link>
+                            <router-link :to="{ name: 'show', params: {id: project.id} }"
+                            class="text-decoration-none text-black fs-5"
+                            >{{ project.name }}</router-link>
                             <p class="card-text"> {{ project.description }} </p>
                             <p class="card-text"> {{ project.type?.name }} </p>
-                            <!-- <a href="{{ project.github_link }}" class="btn btn-primary">Github Link</a> -->
+                            <a href="{{ project.github_link }}" class="btn btn-primary">Github Link</a>
                             <br>
                             <span class="badge text-bg-primary my-2">
-                                <div v-for="technology in project.technologies" :key="technology.id">
-                                    {{ technology.name }}
+                                <div v-for="technology in project.technologies" :key="technology.id"
+                                class="text-black">
+                                    <h6 class="text-black">
+                                        {{ technology.name }}
+                                    </h6>
                                 </div>
                             </span>
                             <br>

@@ -18,7 +18,7 @@ const router = createRouter({
             component: ProjectCard
         },
         {
-            path: '/show',
+            path: '/show/:id',
             name: 'show',
             component: SingleProjectCard
         },
