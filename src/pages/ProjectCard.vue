@@ -12,7 +12,7 @@ export default {
         axios
             .get(`${this.backendUrl}/api/projects/`)
             .then((resp)=>{
-                if(resp.data.succes){
+                if(resp.data.success){
                     this.projects = resp.data.projects;
                     console.log(projects);
                 }else{
