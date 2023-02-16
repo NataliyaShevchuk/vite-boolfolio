@@ -12,7 +12,7 @@ export default {
         axios
             .get(`${this.backendUrl}/api/projects/`)
             .then((resp)=>{
-                this.projects = resp.data.projects;
+                this.projects = resp.data;
                 console.log(projects);
             })
             .catch((er) =>{
@@ -36,7 +36,7 @@ export default {
                             alt="...">
                         </div>
                         <div class="card-body">
-                            <router-link :to="{ name: 'projects.show', params: {id: project.id} }">{{ project.title }}</router-link>
+                            <router-link :to="{ name: 'show', params: {id: project.id} }">{{ project.title }}</router-link>
                             <p class="card-text"> {{ project.description }} </p>
                             <p class="card-text"> {{ project.type?.name }} </p>
                             <!-- <a href="{{ project.github_link }}" class="btn btn-primary">Github Link</a> -->
