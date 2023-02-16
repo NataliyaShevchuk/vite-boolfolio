@@ -12,12 +12,11 @@ export default {
         axios
             .get(`${this.backendUrl}/api/projects/${this.$route.params.id}`)
             .then((resp)=>{
-                if(resp.data.success){
-                    this.projects = resp.data.projects;
-                }else{
-                    this.$router.push({name: 'sorry, but not - found '})
-                }
-            });
+                    this.projects = resp.data;
+            })
+            .catch((er) => {
+                this.$router.push({name: 'sorry, but not - found '})
+            })
     }
 }
 
