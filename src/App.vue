@@ -1,5 +1,8 @@
 <script>
+import  TheHeader  from './components/TheHeader.vue';
+
 export default{
+  components: { TheHeader },
   data(){
     return{
       projects: {}
@@ -9,7 +12,11 @@ export default{
 </script>
 
 <template>
+
+  <TheHeader></TheHeader>
+
   <router-view></router-view>
+
 </template>
 
 <style lang="scss">

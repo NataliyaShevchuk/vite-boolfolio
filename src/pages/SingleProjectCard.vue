@@ -1,16 +1,17 @@
 <script>
 import axios from 'axios';
+import { store } from '../store';
 
 export default {
     name: 'show',
     data() {
         return {
-            backendUrl: 'http://127.0.0.1:8000',
+            store,
             project: []
         }
     },mounted() {
         axios
-            .get(`${this.backendUrl}/api/projects/${this.$route.params.id}`)
+            .get(`${this.store.backendUrl}/api/projects/${this.$route.params.id}`)
             .then((resp)=>{
                     this.project = resp.data;
             })
@@ -28,7 +29,7 @@ export default {
                 <div class="col-6 my-3">
                     <div class="card h-100">
                         <div v-if="project.cover_img">
-                            <img :src="backendUrl + '/storage/' + project.cover_img" 
+                            <img :src="store.backendUrl + '/storage/' + project.cover_img" 
                             class="card-img-top" 
                             alt="...">
                         </div>
