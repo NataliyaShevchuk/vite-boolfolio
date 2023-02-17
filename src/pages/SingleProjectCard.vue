@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             backendUrl: 'http://127.0.0.1:8000',
-            project: {}
+            project: []
         }
     },mounted() {
         axios
@@ -26,7 +26,7 @@ export default {
         <div class="container">
             <h1>Pagina show {{ $route.params.id }}</h1>
                 <div class="col-6 my-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <div v-if="project.cover_img">
                             <img :src="backendUrl + '/storage/' + project.cover_img" 
                             class="card-img-top" 

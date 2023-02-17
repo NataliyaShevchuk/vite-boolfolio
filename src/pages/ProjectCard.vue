@@ -29,14 +29,14 @@ export default {
             <div class="row mx-5">
                 <div class="col-3 my-3"
                 v-for="project in projects" :key="project.id">
-                    <div class="card">
+                    <div class="card h-100">
                         <div v-if="project.cover_img">
                             <img :src="backendUrl + '/storage/' + project.cover_img" 
                             class="card-img-top" 
                             alt="...">
                         </div>
                         <div class="card-body">
-                            <router-link :to="{ name: 'show', params: {id: project.id} }"
+                            <router-link :to="{ name: 'show', params: {id:project.id} }"
                             class="text-decoration-none text-black fs-5"
                             >{{ project.name }}</router-link>
                             <p class="card-text"> {{ project.description }} </p>
