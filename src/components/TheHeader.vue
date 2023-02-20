@@ -105,10 +105,10 @@ export default {
                 //     label: "Chi Siamo",
                 //     routeName: "show/:id",
                 // },
-                // {
-                //     label: "Contatti",
-                //     routeName: "contacts",
-                // },
+                {
+                    label: "Contatti",
+                    routeName: "contacts",
+                },
             ],
         };
     },

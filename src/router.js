@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AppHome from './pages/AppHome.vue';
 import ProjectCard from './pages/ProjectCard.vue';
 import SingleProjectCard from './pages/SingleProjectCard.vue';
+import Contacts from './pages/Contacts.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -22,6 +23,11 @@ const router = createRouter({
             name: 'show',
             component: SingleProjectCard
         },
+        {
+            path: '/contacts',
+            name: 'contacts',
+            component: Contacts
+        }
     ]
 });
 
